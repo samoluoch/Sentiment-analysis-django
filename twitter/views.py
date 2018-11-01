@@ -42,6 +42,10 @@ def analyse(request):
         input_hastag = user_input.cleaned_data['q']
         # print(input_hastag)
         data = getdata(input_hastag)
+        positive = data['Positive']
+        neutral = data['Neutral']
+        negative = data['Negative']
+        print(data['Positive'])
         print(data)
-        return render(request, "results.html", {'data': data})
+        return render(request, "results.html", {'data': data, 'positive': positive, 'neutral': neutral, 'negative': negative})
     return render(request, "home.html", {'input_hastag': user_input})

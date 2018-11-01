@@ -20,7 +20,7 @@ def getdata(input_hashtag):
 
     api = tweepy.API(auth)
 
-    N = 1000  # number of tweets
+    N = 500  # number of tweets
     Tweets = tweepy.Cursor(api.search, q=input_hashtag).items(N)
 
     negative = 0.0
@@ -29,8 +29,9 @@ def getdata(input_hashtag):
     neutral_count = 0
     postive_count = 0
 
+    # print(Tweets)
     for tweet in Tweets:
-        print(tweet.text)
+        # print(tweet.text)
         blob = TextBlob(tweet.text)
         if blob.sentiment.polarity < 0:
             negative += blob.sentiment.polarity
@@ -42,6 +43,13 @@ def getdata(input_hashtag):
             postive_count += 1
     # post = ("Positive ", float(postive_count/N)*100, "%")
 
+    data = {
+        'Positive': postive_count,
+        'Neutral': neutral_count,
+        'Negative': negative_count
+    }
     # print(post)
-    return [['Sentiment', 'number of tweets'], ['Positive', postive_count],
-            ['Neutral', neutral_count], ['Negative', negative_count]]
+    print(data)
+    return data
+    # return [['Sentiment', 'number of tweets'], ['Positive', postive_count],
+    #         ['Neutral', neutral_count], ['Negative', negative_count]]
