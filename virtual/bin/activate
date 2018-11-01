@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/renegade/Documents/Moringa Core/PRO DEV/sentimental/virtual"
+VIRTUAL_ENV="/Users/MacbookAir/Desktop/MORINGA/CORE/PYTHON/FLASK/sentimental-app/virtual"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

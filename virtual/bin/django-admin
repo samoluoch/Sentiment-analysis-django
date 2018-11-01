@@ -1,6 +1,5 @@
-#!/bin/sh
-'''exec' "/home/renegade/Documents/Moringa Core/PRO DEV/sentimental/virtual/bin/python" "$0" "$@"
-' '''
+#!/Users/MacbookAir/Desktop/MORINGA/CORE/PYTHON/FLASK/sentimental-app/virtual/bin/python
+
 # -*- coding: utf-8 -*-
 import re
 import sys

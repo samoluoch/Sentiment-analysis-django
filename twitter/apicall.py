@@ -12,7 +12,7 @@ def getdata(input_hashtag):
 
     api = tweepy.API(auth)
 
-    N = 500  # number of tweets
+    N = 20  # number of tweets
     Tweets = tweepy.Cursor(api.search, q=input_hashtag).items(N)
 
     negative = 0.0
